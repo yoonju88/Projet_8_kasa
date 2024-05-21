@@ -1,9 +1,8 @@
-import '../Styles/App.css'
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Header from './Header'
 import A_Propos from './A_Propos'
-import Home from './Home'
+import Accueil from './Accueil'
 import Footer from './Footer'
 
 function App() {
@@ -11,10 +10,9 @@ function App() {
     <div className="App">
         <Header />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Accueil />} />
             <Route path="/A_Propos" element={<A_Propos />} />
           </Routes>
-          <home />
           <Footer />
     </div>
   )
