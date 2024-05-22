@@ -1,13 +1,14 @@
 import logoKasa from '../Assets/kasa_logo.png'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../Styles/Header.css'
+import '../Styles/index.css'
+import styles from '../Styles/logo.module.css'
 
 function Header() {
     return(
             <header>
                 <h1>
-                    <img src={logoKasa} alt='Logo Kasa' className='logoKasa' />
+                    <img src={logoKasa} alt='Logo Kasa' className={styles.logo} />
                 </h1>
                 <nav>
                     <ul>
