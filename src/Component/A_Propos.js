@@ -2,7 +2,7 @@ import React from 'react'
 import BannerImage2 from '../Assets/apropos_banner.jpg'
 import '../Styles/index.css'
 import { contentList } from '../Data/contentList'
-import ContentItem from './ContentItem'
+import ContentItem from './AproposItem'
 
 function A_Propos(){
     return (
