@@ -27,10 +27,10 @@ header {
 header, header ul {
   display: flex;
   flex-direction: row;
+  column-gap: 35px;
 }
-header li {
+li {
   list-style-type: none;
-  margin-left: 35px;
 }
 header a {
   font-family: Montserrat;
@@ -134,12 +134,12 @@ header a:hover {
   padding:0 20px;
   border-radius: 10px;
 }
-.arrow {
+.arrow_toggle{
   width:24px;
   filter:invert(100%);
   transition: transform 0.5s ease;
 }
-.arrow.rotated {
+.arrow_toggle.rotated{
   transform: rotate(180deg);
 }
 .apropo-title{
@@ -155,19 +155,127 @@ header a:hover {
   background-color: #f6f6f6;
   padding:30px 20px 20px 20px;
   border-radius: 0 0 10px 10px;
-  z-index:-1;
   overflow: hidden;
-  max-height:0;
-  transition: max-height 0.7s ease-out;
+  opacity: 0;
+  z-index: -1;
 }
 .description_box.visible{
-  max-height:500px;
+  opacity: 1;
 }
 .description_box.hidden{
-  max-height:0;
+  opacity: 0;
 }
 .description_box p{
   font-size: 18px;
+}
+/*page_Logement*/
+.logement{
+padding: 30px 100px;
+}
+.logement_banner {
+  width:100%;
+  height: 415px;
+  position:relative;
+  overflow: hidden;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.logement_bannerImage{
+  object-fit: cover;
+  width:100%;
+  position: absolute;
+}
+
+.arrow {
+  height:80px;
+  filter: invert(100%);
+  position: absolute;
+}
+
+.arrow_left {
+  left: 20px;
+}
+
+.arrow_right {
+right: 20px;
+}
+
+.logement_content{
+  padding:30px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.logement_content-arrange {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logement_content p{
+  font-size: 18px;
+  padding-top:10px
+}
+
+.logement_title {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.logement_content h2 {
+  text-align: left;
+  font-size: 36px;
+  font-weight: 500;
+  color: #ff6060;
+}
+
+.logement_content h2, .host_name {
+  color: #ff6060;
+  text-align: right;
+}
+
+.host{
+display: flex;
+flex-direction: row;
+column-gap: 20px;
+align-items: center;
+padding-bottom:30px;
+}
+
+.host_image {
+  width:64px;
+  height:100%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.description, .equipement  {
+  width:47%;
+  padding:10px;
+  position:relative;
+}
+
+.title_block {
+  height:52px;
+  background-color: #ff6060;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:20px;
+  border-radius: 10px;
+}
+
+.content_block {
+  background-color:#f6f6f6;
+  padding: 20px;
+}
+
+.equipement li{
+margin-bottom:5px;
 }
 
 /* footer */
