@@ -24,8 +24,7 @@ function Logement() {
     const host = gallery.host
     const [firstName, lastName] = host.name.split(' ')
 
-    const id = useId()
-
+   
     const [isDescriptionVisible, setIsDescriptionVisible] = useState(false)
     const DescriptionVisibility = () => {
         setIsDescriptionVisible(!isDescriptionVisible)
@@ -34,8 +33,6 @@ function Logement() {
     const equipementVisibility = () => {
         setIsEquipementVisible(!isEquipementVisible)
     }
-
-
 
     return (
         <div className='logement'>
@@ -57,7 +54,11 @@ function Logement() {
                 </div>
                 <div className='logement_content-arrange'>
                     <div className='tags'>
-
+                            {gallery.tags.map((tag, index) => (
+                                <span className='tags_box'>
+                                    <p >{tag}</p>
+                                </span>
+                            ))}
                     </div>
                     <div className='rating'>
 
@@ -65,7 +66,7 @@ function Logement() {
                 </div>
                 <div className='logement_content-arrange'>
                     <div className='description' >
-                        <div className='title_block'>
+                        <div className='title_box'>
                             <h3>Description</h3>
                             <a onClick={DescriptionVisibility}>
                                 <img src={arrow} alt="arrow" className={`arrow_toggle ${isDescriptionVisible ? 'rotated' : ''}`} />
@@ -79,7 +80,7 @@ function Logement() {
                         )}
                     </div>
                     <div className='equipement'>
-                        <div className='title_block'>
+                        <div className='title_box'>
                             <h3>Equipments</h3>
                             <a onClick={equipementVisibility}>
                                 <img src={arrow} alt="arrow" className={`arrow_toggle  ${isEquipementVisible ? 'rotated' : ''}`} />
@@ -88,7 +89,7 @@ function Logement() {
                     {isEquipementVisible  && (
                         <ul className={`description_box ${isEquipementVisible ? 'visible' : 'hidden'}`}>
                             {gallery.equipments.map((equipement, index) => (
-                                <li key={id}>{equipement}</li>
+                                <li>{equipement}</li>
                             ))}
                         </ul>
                     )}
