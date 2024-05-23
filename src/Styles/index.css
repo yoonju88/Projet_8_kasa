@@ -251,14 +251,30 @@ padding-bottom:30px;
   object-fit: cover;
   border-radius: 100%;
 }
+.tags{
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+}
+.tags_box{
+  background-color: #ff6060;
+  border-radius: 15px;
+  color: white;
+
+}
+.tags_box p{
+  text-align: center;
+  padding: 10px 30px;
+}
+
 
 .description, .equipement  {
   width:47%;
-  padding:10px;
   position:relative;
+  margin-top: 20px;
 }
 
-.title_block {
+.title_box {
   height:52px;
   background-color: #ff6060;
   color: white;
@@ -267,11 +283,6 @@ padding-bottom:30px;
   justify-content: space-between;
   padding:20px;
   border-radius: 10px;
-}
-
-.content_block {
-  background-color:#f6f6f6;
-  padding: 20px;
 }
 
 .equipement li{
