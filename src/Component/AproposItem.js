@@ -14,7 +14,7 @@ function ContentItem({ title, description }) {
 
                 <h3 className='apropo-title'>{title}</h3>
                 <a onClick={toggleVisibility}>
-                    <img src={arrow} alt="arrow" className={`.arrow_toggle ${isVisible ? 'rotated' : ''}`} />
+                    <img src={arrow} alt="arrow" className={`arrow_toggle ${isVisible ? 'rotated' : ''}`} />
 
                 </a>
             </div>
