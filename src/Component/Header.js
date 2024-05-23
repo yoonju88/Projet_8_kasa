@@ -8,12 +8,18 @@ function Header() {
     return(
             <header>
                 <h1>
-                    <img src={logoKasa} alt='Logo Kasa' className={styles.logo} />
+                    <Link to="/">
+                        <img src={logoKasa} alt='Logo Kasa' className={styles.logo} />
+                    </Link>
                 </h1>
                 <nav>
                     <ul>
-                        <li><Link to="/">Accueil</Link></li>
-                        <li><Link to="/A_Propos">A propos</Link></li>
+                        <li>
+                            <Link to="/">Accueil</Link>
+                        </li>
+                        <li>
+                            <Link to="/A_Propos">A propos</Link>
+                        </li>
                     </ul>
                 </nav>
             </header>
