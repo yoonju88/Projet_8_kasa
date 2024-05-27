@@ -3,7 +3,6 @@ import '../Styles/index.css'
 import {GalleriesList} from "../Data/GalleriesList";
 import BannerImage1 from '../Assets/home_banner.jpg'
 import GalleryItem from './GalleryItem'
-import Logement from './Logement';
 
 function Accueil(){
     const galleriesList = GalleriesList.map(gallery => (
