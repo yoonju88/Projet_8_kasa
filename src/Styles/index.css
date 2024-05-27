@@ -16,7 +16,18 @@ body {
   max-width: 1440px;
   margin: 0 auto;
 }
+button {
+  background-color: #ff6060;
+  border-width: 0;
+}
 
+li {
+  list-style-type: none;
+}
+
+a{
+  color:black;
+}
 /*Header*/
 header {
   padding: 20px 100px;
@@ -29,9 +40,7 @@ header, header ul {
   flex-direction: row;
   column-gap: 35px;
 }
-li {
-  list-style-type: none;
-}
+
 header a {
   font-family: Montserrat;
   font-weight: 500;
@@ -258,15 +267,20 @@ padding-bottom:30px;
 }
 .tags_box{
   background-color: #ff6060;
-  border-radius: 15px;
+  border-radius: 10px;
   color: white;
-
-}
-.tags_box p{
   text-align: center;
-  padding: 10px 30px;
+  padding: 5px 25px;
+  font-size: 14px;
+}
+.stars_container{
+  display: inline-block;
 }
 
+.star{
+  font-size: 24px;
+  margin-left:10px;
+}
 
 .description, .equipement  {
   width:47%;
@@ -287,6 +301,33 @@ padding-bottom:30px;
 
 .equipement li{
 margin-bottom:5px;
+}
+
+/*Error page*/
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 100px;
+  padding:40px 0 100px 0;
+}
+
+.errorPage_title{
+  font-size: 288px;
+  color:#ff6060;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.errorPage_message {
+  color:#ff6060;
+  font-size: 36px;
+  font-weight: 400;
+}
+.errorPage_link {
+  color:black;
+  font-size: 18px;
+
 }
 
 /* footer */
