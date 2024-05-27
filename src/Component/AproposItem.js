@@ -13,10 +13,10 @@ function ContentItem({ title, description }) {
             <div className='title_box'>
 
                 <h3 className='apropo-title'>{title}</h3>
-                <a onClick={toggleVisibility}>
+                <button onClick={toggleVisibility}>
                     <img src={arrow} alt="arrow" className={`arrow_toggle ${isVisible ? 'rotated' : ''}`} />
 
-                </a>
+                </button>
             </div>
             {isVisible && (
                 <div className={`description_box ${isVisible ? 'visible' : 'hidden'}`}>
