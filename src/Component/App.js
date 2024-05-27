@@ -6,6 +6,7 @@ import A_Propos from './A_Propos'
 import Accueil from './Accueil'
 import Footer from './Footer'
 import Logement from './Logement'
+import ErrorPage from './ErrorPage'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Accueil />} />
             <Route path="/A_Propos" element={<A_Propos />}/>
             <Route path="/Logement/:galleryId" element={<Logement />}/>
+            <Route path="/ErrorPage" element={<ErrorPage />} />
           </Routes>
           <Footer />
     </div>
