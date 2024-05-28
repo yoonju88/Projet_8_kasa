@@ -12,7 +12,7 @@ function ContentItem({ title, description }) {
         <div className='apropos-item'>
             <div className='title_box'>
 
-                <h3 className='apropo-title'>{title}</h3>
+                <h3 className='apropos_title'>{title}</h3>
                 <button onClick={toggleVisibility}>
                     <img src={arrow} alt="arrow" className={`arrow_toggle ${isVisible ? 'rotated' : ''}`} />
 

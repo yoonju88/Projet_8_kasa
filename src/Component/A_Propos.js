@@ -5,8 +5,9 @@ import { contentList } from '../Data/contentList'
 import ContentItem from './AproposItem'
 
 function A_Propos(){
+    
     return (
-        <div className='apropos'>
+        <section className='apropos'>
             <div className='banner'>
                 <img src={BannerImage2} alt="Image banner" className='banner_image'/>   
             </div>
@@ -17,7 +18,7 @@ function A_Propos(){
                     description={content.content} />
                 ))}              
             </div>     
-        </div>
+        </section>
     )        
 }
 

@@ -9,14 +9,15 @@ import Logement from './Logement'
 import ErrorPage from './ErrorPage'
 
 function App() {
+
   return (
-    <div className="App">
+    <div className='App' >
         <Header />
           <Routes>
             <Route path="/" element={<Accueil />} />
             <Route path="/A_Propos" element={<A_Propos />}/>
             <Route path="/Logement/:galleryId" element={<Logement />}/>
-            <Route path="/ErrorPage" element={<ErrorPage />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
     </div>
