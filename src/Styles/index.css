@@ -1,23 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/*style common*/
 .Index {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
+:root {
+  --main-color:#ff6060;
+  --second-color:#f6f6f6;
 
+}
 *{
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  margin:0px;
+  margin:0;
+}
+
+img {
+  object-fit: cover;
 }
 
 body {
   max-width: 1440px;
-  margin: 0 auto;
+  margin: 0px auto;
 }
 button {
-  background-color: #ff6060;
+  background-color: var(--main-color);
   border-width: 0;
 }
 
@@ -25,22 +34,37 @@ li {
   list-style-type: none;
 }
 
-a{
+a {
   color:black;
 }
-/*Header*/
-header {
-  padding: 20px 100px;
-  justify-content: space-between;
-  align-items: center;
+.break {
+  display: none;
 }
 
+.accueil, .apropos, .logement {
+  padding: 0px 100px;
+}
+
+.arrow, .arrow_toggle{
+  filter:invert(100%);
+}
+
+/*Header*/
+.header_logo {
+  width: 210px;
+  height: 68px;
+}
 header, header ul {
   display: flex;
   flex-direction: row;
   column-gap: 35px;
 }
-
+header {
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  padding: 50px 100px 30px 100px;
+}
 header a {
   font-family: Montserrat;
   font-weight: 500;
@@ -57,15 +81,14 @@ header a:hover {
   position:relative;
   width:100%;
   height: 224px;
+  overflow: hidden;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  border-radius: 25px;
 }
 .banner_image{
   position:absolute;
-  object-fit: cover;
   z-index:1;
   filter:brightness(65%)
 }
@@ -79,9 +102,6 @@ header a:hover {
 }
 
 /* Page Accueil */
-.accueil, .apropos {
-  padding: 10px 100px;
-}
 .gallery {
   margin: 50px 0 50px;
   width:100%;
@@ -90,7 +110,7 @@ header a:hover {
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 50px;
   row-gap: 50px;
-  background-color: #f6f6f6;
+  background-color: var(--second-color);
   border-radius: 25px;;
 }
 .gallery-item {
@@ -101,7 +121,6 @@ header a:hover {
   position:relative;
 }
 .gallery_item_image {
-  object-fit: cover;
   width:100%;
   height:100%;
 }
@@ -121,37 +140,41 @@ header a:hover {
   bottom:15px;
   left:0px;
   font-family: Montserrat;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 18px;
 }
 /*Page A propos*/
-.apropos-item{
-  margin-bottom:30px;
-  position:relative;
-}
 .apropos_list{
-  padding: 50px 100px 20px 100px;
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
 }
 .title_box{
-  background-color: #ff6060;
+  background-color: var(--main-color);
   margin:auto;
   width:100%;
-  height:54px;
+  height:52px;
   display: flex;
   align-items: center;  
   justify-content: space-between;
   padding:0 20px;
-  border-radius: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
+.apropos-item{
+  position:relative;
 }
 .arrow_toggle{
   width:24px;
-  filter:invert(100%);
+  rotate: 180deg;
   transition: transform 0.5s ease;
 }
 .arrow_toggle.rotated{
   transform: rotate(180deg);
 }
-.apropo-title{
+.apropos_title{
   font-weight: 700;
   font-size: 24px;
   color:white; 
@@ -161,7 +184,7 @@ header a:hover {
   top:-10px;
   margin:0;
   width:100%;
-  background-color: #f6f6f6;
+  background-color: var(--second-color);
   padding:30px 20px 20px 20px;
   border-radius: 0 0 10px 10px;
   overflow: hidden;
@@ -178,9 +201,7 @@ header a:hover {
   font-size: 18px;
 }
 /*page_Logement*/
-.logement{
-padding: 30px 100px;
-}
+/*banner section*/
 .logement_banner {
   width:100%;
   height: 415px;
@@ -190,115 +211,83 @@ padding: 30px 100px;
   display: flex;
   align-items: center;
 }
-
-.logement_bannerImage{
-  object-fit: cover;
+.logement_bannerImage{ 
   width:100%;
+  height:415px;
   position: absolute;
 }
-
 .arrow {
   height:80px;
-  filter: invert(100%);
   position: absolute;
 }
-
 .arrow_left {
   left: 20px;
 }
-
 .arrow_right {
 right: 20px;
 }
-
-.logement_content{
-  padding:30px 0;
+/*logement container*/
+.logement_content, .titleContainer{
   display: flex;
   flex-direction: column;
 }
-
-.logement_content-arrange {
+.logement_content{
+  padding: 50px 0;  
+}
+.logement_titleContainer, .logement_toggles{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
+.tags, .rating, .logement_toggles{
+  margin-top: 30px;
+}
 .logement_content p{
   font-size: 18px;
-  padding-top:10px
 }
-
-.logement_title {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
+.titleContainer p{
+  margin-top: 5px;
+  font-weight: 500;
 }
 
 .logement_content h2 {
   text-align: left;
   font-size: 36px;
   font-weight: 500;
-  color: #ff6060;
 }
-
 .logement_content h2, .host_name {
-  color: #ff6060;
-  text-align: right;
+  color: var(--main-color);
 }
-
 .host{
 display: flex;
-flex-direction: row;
 column-gap: 20px;
 align-items: center;
-padding-bottom:30px;
+text-align: right;
 }
-
 .host_image {
   width:64px;
-  height:100%;
-  object-fit: cover;
   border-radius: 100%;
 }
 .tags{
   display: flex;
-  flex-direction: row;
   column-gap: 20px;
 }
 .tags_box{
-  background-color: #ff6060;
+  background-color: var(--main-color);
   border-radius: 10px;
   color: white;
   text-align: center;
   padding: 5px 25px;
   font-size: 14px;
 }
-.stars_container{
-  display: inline-block;
-}
-
 .star{
   font-size: 24px;
   margin-left:10px;
 }
-
 .description, .equipement  {
   width:47%;
   position:relative;
-  margin-top: 20px;
 }
-
-.title_box {
-  height:52px;
-  background-color: #ff6060;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding:20px;
-  border-radius: 10px;
-}
-
 .equipement li{
 margin-bottom:5px;
 }
@@ -314,20 +303,19 @@ margin-bottom:5px;
 
 .errorPage_title{
   font-size: 288px;
-  color:#ff6060;
+  color: var(--main-color);
   font-weight: 700;
   margin-top: 0;
 }
 
 .errorPage_message {
-  color:#ff6060;
+  color: var(--main-color);
   font-size: 36px;
   font-weight: 400;
 }
 .errorPage_link {
   color:black;
   font-size: 18px;
-
 }
 
 /* footer */
@@ -356,6 +344,176 @@ footer{
   font-family: Montserrat;
   font-weight: 500;
   font-size: 24px;
-  padding: 40px 0 20px 0;
+  padding: 40px 0 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  header, .accueil, .apropos, .logement {
+    padding: 20px 20px;
+  }
+  .break {
+    display: initial;
+  }
+
+  /*header*/
+  header{
+    margin-top: 20px;
+    height:47px;
+  }
+  header ul{
+    column-gap: 30px;
+    padding:0;
+  }
+  header a {
+    font-size: 12px;  
+    text-transform: uppercase;
+  }
+  .header_logo{
+    width:145px;
+    height:47px;
+  }
+/*banner*/
+  .banner{
+    height:112px;
+    border-radius: 10px;
+  }
+  .banner_title {
+    text-align: left;
+    font-size: 24px;
+    position:absolute;
+    left: 20px;
+  }
+/*gallery*/
+  .gallery{
+    grid-template-columns: 1fr;
+    padding:0;
+    row-gap: 30px;
+    background-color: white;
+    margin:30px 0 30px;
+  }
+  .gallery-item {
+    height:255px;
+    border-radius: 10px;
+  }
+  .gallery_item_title{
+    font-size: 18px;
+    font-weight: 700;
+    bottom:15px;
+  }
+  /*page logement*/
+  .logement_banner {
+    width: 100%;
+    height:255px;
+    border-radius: 10px;
+  }
+  .logement_bannerImage{
+    width: 100%;
+    height:255px;
+  }
+  .arrow {
+    height:20px;
+  }
+  .arrow_left {
+    left: 10px;
+  }
+  .arrow_right {
+  right: 10px;
+  }
+  .logement_content{
+    padding:20px 0 0 0;  
+  }
+  .logement_content h2{
+  font-size: 18px;
+  }
+  .logement_content p{
+    font-size: 14px;
+  }
+  .tags, .logement_toggles{
+    margin-top: 20px;
+  }
+  .tags {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 15px;
+  }
+  .tags_box {
+    font-size: 10px;
+  }
+  .host{
+    column-gap: 10px;;
+  }
+  .host_image {
+    width:33px;
+  }
+  .host_name {
+    font-size: 12px;
+  }
+  .star{
+    font-size: 18px;
+    margin-right:5px;
+    margin-left: 0;
+  }
+  .rating{
+    margin-top:0;
+  }
+  .logement_titleContainer {
+    flex-direction: column;
+  }
+  .logement_hostWithRating{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top:20px;
+    align-items: center;
+  }
+  .logement_toggles {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .description, .equipement{
+    width:100%;
+  }
+  .logement_toggles p, .logement_toggles li {
+    font-size: 12px;
+  }
+  .description_box{
+    padding: 20px 10px 10px 10px;
+  }
+  .title_box{
+    height:32px;
+    border-radius: 5px;
+    padding:0 10px;
+  }
+  .arrow_toggle{
+    width: 16px;
+  }
+/*A propos*/
+  .apropos_list{
+    padding: 20px 0px 0px 0px;
+    row-gap: 20px;
+  } 
+  .apropos_title {
+    font-size: 13px;
+  }
+  .apropos_list p{
+    font-size: 12px;
+  }
+/*Error page*/
+.errorPage_title {
+  margin-top: 40px;
+  font-size: 96px;
+}
+.errorPage_message{
+  font-size: 18px;
+}
+.errorPage_link{
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+ /*footer*/
+.footer_txt {
+  font-size: 12px;
+  padding: 10px 0 20px 0;
+}
 
 }
