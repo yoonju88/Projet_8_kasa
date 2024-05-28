@@ -1,7 +1,7 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Styles/index.css'
 import { GalleriesList } from '../Data/GalleriesList'
-import { useParams,useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import arrowLeft from '../Assets/chevron-left-solid.svg'
 import arrowRight from '../Assets/chevron-right-solid.svg'
 import arrow from '../Assets/chevron-down-solid.svg'
@@ -18,19 +18,18 @@ function Logement() {
     const [isEquipementVisible, setIsEquipementVisible] = useState(false)
 
 
-    useEffect(()=>{
+    useEffect(() => {
         if (!gallery) {
-            navigate("/ErrorPage")
+            navigate("*")
         }
-    },[gallery, navigate])
+    }, [gallery, navigate])
 
     if (!gallery) {
         return null
     }
 
-    
+
     const bannerImage = gallery.pictures[bannerImageN]
-    console.log(bannerImageN)
 
     const increase = () => {
         setBannerImageN(bannerImageN === gallery.pictures.length - 1 ? 0 : bannerImageN + 1)
@@ -42,11 +41,11 @@ function Logement() {
     const host = gallery.host
     const [firstName, lastName] = host.name.split(' ')
 
-    
+
     const DescriptionVisibility = () => {
         setIsDescriptionVisible(!isDescriptionVisible)
     }
-    
+
     const equipementVisibility = () => {
         setIsEquipementVisible(!isEquipementVisible)
     }
@@ -65,39 +64,39 @@ function Logement() {
         return <div className='stars_container'>{stars}</div>
     }
     return (
-        <div className='logement'>
+        <section className='logement'>
             <div className="logement_banner">
-                <img src={bannerImage} alt={`${gallery.title} ${bannerImageN+1}`} className='logement_bannerImage' />
+                <img src={bannerImage} alt={`${gallery.title} ${bannerImageN + 1}`} className='logement_bannerImage' />
                 <img src={arrowLeft} alt="arrow left" onClick={decrease} className='arrow arrow_left' />
                 <img src={arrowRight} alt="arrow right" onClick={increase} className='arrow arrow_right' />
             </div>
             <div className='logement_content'>
-                <div className='logement_content-arrange'>
-                    <div className='logement_title'>
+                <div className='logement_titleContainer'>
+                    <div className='titleContainer'>
                         <h2>{gallery.title}</h2>
                         <p>{gallery.location}</p>
-                    </div>
-                    <div className='host'>
-                        <p className='host_name'>{firstName}<br />{lastName}</p>
-                        <img src={host.picture} alt={host.name} className="host_image" />
-                    </div>
-                </div>
-                <div className='logement_content-arrange'>
-                    <div className='tags'>
+                        <div className='tags'>
                         {gallery.tags.map((tag, index) => (
-                            <span key={tag.toString()} className='tags_box'>
+                            <div key={tag.toString()} className='tags_box'>
                                 {tag}
-                            </span>
+                            </div>
                         ))}
+                        </div>
                     </div>
-                    <div className='rating'>
-                        {ratingByStars()}
+                    <div className='logement_hostWithRating'>
+                        <div className='host'>
+                            <p className='host_name'>{firstName}<br />{lastName}</p>
+                            <img src={host.picture} alt={host.name} className="host_image" />
+                        </div>
+                        <div className='rating'>
+                            {ratingByStars()}
+                        </div>
                     </div>
                 </div>
-                <div className='logement_content-arrange'>
+                <div className='logement_toggles'>
                     <div className='description' >
                         <div className='title_box'>
-                            <h3>Description</h3>
+                            <p>Description</p>
                             <button onClick={DescriptionVisibility}>
                                 <img src={arrow} alt="arrow" className={`arrow_toggle ${isDescriptionVisible ? 'rotated' : ''}`} />
 
@@ -111,7 +110,7 @@ function Logement() {
                     </div>
                     <div className='equipement'>
                         <div className='title_box'>
-                            <h3>Equipments</h3>
+                            <p>Equipments</p>
                             <button onClick={equipementVisibility}>
                                 <img src={arrow} alt="arrow" className={`arrow_toggle  ${isEquipementVisible ? 'rotated' : ''}`} />
                             </button>
@@ -125,9 +124,8 @@ function Logement() {
                         )}
                     </div>
                 </div>
-
             </div>
-        </div >
+        </section >
     )
 
 }
