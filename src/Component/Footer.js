@@ -9,7 +9,7 @@ function Footer() {
                 <img src={Logo} alt='Logo Kasa' className='logo' />
             </div>
             <div>
-                <p className='footer_txt'> @ 2020 Kasa. All rights reserved</p>
+                <p className='footer_txt'> @ 2020 Kasa. All <br className='break'/>rights reserved</p>
             </div>
         </footer>
     )

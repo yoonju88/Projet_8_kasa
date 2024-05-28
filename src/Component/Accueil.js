@@ -14,15 +14,15 @@ function Accueil(){
             />
     )) 
     return (
-        <div className='accueil'>
+        <section className='accueil'>
             <div className='banner'>
                 <img src={BannerImage1} alt="Image banner" className='banner_image'/>
-                <h2 className='banner_title'>Chez vous, partout et ailleurs</h2>
+                <h2 className='banner_title'>Chez vous,<br className='break'/> partout et ailleurs</h2>
             </div>
             <div className='gallery'>
                 {galleriesList}
             </div>
-        </div>
+        </section>
     )
 }
 
