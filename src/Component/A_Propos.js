@@ -1,16 +1,18 @@
 import React from 'react'
-import BannerImage2 from '../Assets/apropos_banner.jpg'
+import AproposBannerImage from '../Assets/apropos_banner.jpg'
 import '../Styles/index.css'
 import { contentList } from '../Data/contentList'
 import ContentItem from './AproposItem'
+import Banner from './Banner'
 
 function A_Propos(){
+    const bannerImage = AproposBannerImage
+    const bannerId = 'Apropos banner image'
+    const bannerTitle =''
     
     return (
         <section className='apropos'>
-            <div className='banner'>
-                <img src={BannerImage2} alt="Image banner" className='banner_image'/>   
-            </div>
+            <Banner bannerImage={bannerImage} bannerTitle={bannerTitle} id={bannerId}/>
             <div className='apropos_list'>
                 {contentList.map(content =>(
                     <ContentItem key={content.id}
