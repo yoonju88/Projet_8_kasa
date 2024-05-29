@@ -8,15 +8,12 @@ import arrow from '../Assets/chevron-down-solid.svg'
 import { FaStar } from "react-icons/fa"
 
 function Logement() {
-
-    const { galleryId } = useParams()
     const navigate = useNavigate()
-    const gallery = GalleriesList.find(item => item.id === galleryId)
-
+    const { galleryId } = useParams()
     const [bannerImageN, setBannerImageN] = useState(0)
     const [isDescriptionVisible, setIsDescriptionVisible] = useState(false)
     const [isEquipementVisible, setIsEquipementVisible] = useState(false)
-
+    const gallery = GalleriesList.find(item => item.id === galleryId)
 
     useEffect(() => {
         if (!gallery) {
@@ -24,12 +21,9 @@ function Logement() {
         }
     }, [gallery, navigate])
 
-    if (!gallery) {
-        return null
-    }
-
-
     const bannerImage = gallery.pictures[bannerImageN]
+    const host = gallery.host
+    const [firstName, lastName] = host.name.split(' ')
 
     const increase = () => {
         setBannerImageN(bannerImageN === gallery.pictures.length - 1 ? 0 : bannerImageN + 1)
@@ -37,15 +31,9 @@ function Logement() {
     const decrease = () => {
         setBannerImageN(bannerImageN === 0 ? gallery.pictures.length - 1 : bannerImageN - 1)
     }
-
-    const host = gallery.host
-    const [firstName, lastName] = host.name.split(' ')
-
-
     const DescriptionVisibility = () => {
         setIsDescriptionVisible(!isDescriptionVisible)
     }
-
     const equipementVisibility = () => {
         setIsEquipementVisible(!isEquipementVisible)
     }
@@ -76,11 +64,11 @@ function Logement() {
                         <h2>{gallery.title}</h2>
                         <p>{gallery.location}</p>
                         <div className='tags'>
-                        {gallery.tags.map((tag, index) => (
-                            <div key={tag.toString()} className='tags_box'>
-                                {tag}
-                            </div>
-                        ))}
+                            {gallery.tags.map((tag, index) => (
+                                <div key={tag.toString()} className='tags_box'>
+                                    {tag}
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className='logement_hostWithRating'>
@@ -127,6 +115,5 @@ function Logement() {
             </div>
         </section >
     )
-
 }
 export default Logement
