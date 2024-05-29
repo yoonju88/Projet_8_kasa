@@ -16,28 +16,24 @@ function Logement() {
     const gallery = GalleriesList.find(item => item.id === galleryId)
 
     useEffect(() => {
-        if (!gallery) {
+         if (!gallery) {
             navigate("*")
-        }
-    }, [gallery, navigate])
+         }
+     }, [gallery, navigate])
 
+     if(!gallery) {
+        return null
+     }
+     
     const bannerImage = gallery.pictures[bannerImageN]
-    const host = gallery.host
-    const [firstName, lastName] = host.name.split(' ')
-
     const increase = () => {
         setBannerImageN(bannerImageN === gallery.pictures.length - 1 ? 0 : bannerImageN + 1)
     }
     const decrease = () => {
         setBannerImageN(bannerImageN === 0 ? gallery.pictures.length - 1 : bannerImageN - 1)
     }
-    const DescriptionVisibility = () => {
-        setIsDescriptionVisible(!isDescriptionVisible)
-    }
-    const equipementVisibility = () => {
-        setIsEquipementVisible(!isEquipementVisible)
-    }
-
+    const host = gallery.host
+    const [firstName, lastName] = host.name.split(' ')
     const ratingByStars = () => {
         const totalStars = 5;
         const stars = [];
@@ -51,6 +47,13 @@ function Logement() {
         }
         return <div className='stars_container'>{stars}</div>
     }
+    const DescriptionVisibility = () => {
+        setIsDescriptionVisible(!isDescriptionVisible)
+    }
+    const equipementVisibility = () => {
+        setIsEquipementVisible(!isEquipementVisible)
+    }
+    
     return (
         <section className='logement'>
             <div className="logement_banner">
