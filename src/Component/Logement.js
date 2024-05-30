@@ -25,11 +25,11 @@ function Logement() {
             setLoading(false)
          }
      }, [galleryId, navigate])
-
      if(loading) {
-        return  <div>Loading...</div>   
+        return  <div className='loading_container'>
+            <p className='loading_text'>Loading...</p>
+            </div>   
      } 
-
     const bannerImage = gallery.pictures[bannerImageN]
     const increase = () => {
         setBannerImageN(bannerImageN === gallery.pictures.length - 1 ? 0 : bannerImageN + 1)
@@ -42,7 +42,6 @@ function Logement() {
     const ratingByStars = () => {
         const totalStars = 5
         const stars = []
-
         for (let i = 1; i <= totalStars; i++) {
             stars.push(
                 <FaStar key={i} className='star'

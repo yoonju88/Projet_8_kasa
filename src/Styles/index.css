@@ -284,6 +284,20 @@ justify-content: flex-end;
 margin-bottom:5px;
 }
 
+/*Loading*/
+.loading_container{
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading_text{
+  font-size: 24px;
+  color: black;
+  font-weight: 500;
+}
+
 /*Error page*/
 .errorPage {
   display: flex;
