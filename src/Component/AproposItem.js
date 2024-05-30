@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import arrow from '../Assets/chevron-down-solid.svg'
+import arrow from '../Assets/chevron-up-solid.svg'
 
 function ContentItem({ title, description }) {
 

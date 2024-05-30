@@ -4,7 +4,7 @@ import { GalleriesList } from '../Data/GalleriesList'
 import { useParams, useNavigate } from 'react-router-dom'
 import arrowLeft from '../Assets/chevron-left-solid.svg'
 import arrowRight from '../Assets/chevron-right-solid.svg'
-import arrow from '../Assets/chevron-down-solid.svg'
+import arrow from '../Assets/chevron-up-solid.svg'
 import { FaStar } from "react-icons/fa"
 
 function Logement() {

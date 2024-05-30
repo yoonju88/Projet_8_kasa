@@ -157,7 +157,6 @@ header a:hover {
 }
 .arrow_toggle{
   width:24px;
-  rotate: 180deg;
   transition: transform 0.5s ease;
 }
 .arrow_toggle.rotated{
