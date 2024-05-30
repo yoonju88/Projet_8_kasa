@@ -18,6 +18,7 @@ function Logement() {
     useEffect(() => {
          if (!gallery) {
             navigate("*")
+            console.log('Logement correspond non trouvé')
          }
      }, [gallery, navigate])
 
@@ -35,8 +36,8 @@ function Logement() {
     const host = gallery.host
     const [firstName, lastName] = host.name.split(' ')
     const ratingByStars = () => {
-        const totalStars = 5;
-        const stars = [];
+        const totalStars = 5
+        const stars = []
 
         for (let i = 1; i <= totalStars; i++) {
             stars.push(
@@ -67,8 +68,8 @@ function Logement() {
                         <h2>{gallery.title}</h2>
                         <p>{gallery.location}</p>
                         <div className='tags'>
-                            {gallery.tags.map((tag, index) => (
-                                <div key={tag.toString()} className='tags_box'>
+                            {gallery.tags.map((tag) => (
+                                <div key={tag}className='tags_box'>
                                     {tag}
                                 </div>
                             ))}
@@ -108,8 +109,8 @@ function Logement() {
                         </div>
                         {isEquipementVisible && (
                             <ul className={`description_box ${isEquipementVisible ? 'visible' : 'hidden'}`}>
-                                {gallery.equipments.map((equipement, index) => (
-                                    <li key={equipement.toString()}>{equipement}</li>
+                                {gallery.equipments.map((equipement) => (
+                                    <li key={equipement}>{equipement}</li>
                                 ))}
                             </ul>
                         )}
