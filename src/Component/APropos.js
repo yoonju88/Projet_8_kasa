@@ -7,12 +7,12 @@ import Banner from './Banner'
 
 function APropos(){
     const bannerImage = AproposBannerImage
-    const bannerId = 'Apropos banner image'
+    const bannerAlt= 'Apropos banner image'
     const bannerTitle =''
     
     return (
         <section className='apropos'>
-            <Banner bannerImage={bannerImage} bannerTitle={bannerTitle} id={bannerId}/>
+            <Banner bannerImage={bannerImage} bannerTitle={bannerTitle} alt={bannerAlt}/>
             <div className='apropos_list'>
                 {contentList.map(content =>(
                     <ContentItem key={content.id}

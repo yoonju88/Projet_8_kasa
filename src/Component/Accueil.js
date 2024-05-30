@@ -19,11 +19,11 @@ function Accueil(){
     const bannerTitle = (
         <React.Fragment>Chez vous,<br className='break'/> partout et ailleurs</React.Fragment>
     )
-    const bannerId = 'Home banner image'
+    const bannerAlt = 'Home banner image'
 
     return (
         <section className='accueil'>
-            <Banner bannerImage={bannerImage} bannerTitle={bannerTitle} id={bannerId}/>
+            <Banner bannerImage={bannerImage} bannerTitle={bannerTitle} alt={bannerAlt}/>
             <div className='gallery'>
                 {galleriesList}
             </div>
