@@ -15,7 +15,7 @@ function Accueil(){
             />
     )) 
 
-    const bannerImage = homeBannerImage
+ 
     const bannerTitle = (
         <React.Fragment>Chez vous,<br className='break'/> partout et ailleurs</React.Fragment>
     )
@@ -23,7 +23,7 @@ function Accueil(){
 
     return (
         <section className='accueil'>
-            <Banner bannerImage={bannerImage} bannerTitle={bannerTitle} alt={bannerAlt}/>
+            <Banner bannerImage={homeBannerImage} bannerTitle={bannerTitle} alt={bannerAlt}/>
             <div className='gallery'>
                 {galleriesList}
             </div>

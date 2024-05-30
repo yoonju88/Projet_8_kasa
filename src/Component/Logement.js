@@ -17,15 +17,13 @@ function Logement() {
 
     useEffect(() => {
          if (!gallery) {
-            navigate("*")
-            console.log('Logement correspond non trouvé')
+            navigate("/404")
          }
      }, [gallery, navigate])
 
      if(!gallery) {
         return null
-     }
-     
+     }    
     const bannerImage = gallery.pictures[bannerImageN]
     const increase = () => {
         setBannerImageN(bannerImageN === gallery.pictures.length - 1 ? 0 : bannerImageN + 1)
@@ -69,7 +67,7 @@ function Logement() {
                         <p>{gallery.location}</p>
                         <div className='tags'>
                             {gallery.tags.map((tag) => (
-                                <div key={tag}className='tags_box'>
+                                <div key={tag} className='tags_box'>
                                     {tag}
                                 </div>
                             ))}
@@ -86,12 +84,11 @@ function Logement() {
                     </div>
                 </div>
                 <div className='logement_toggles'>
-                    <div className='description' >
+                    <div className='description'>
                         <div className='title_box'>
                             <p>Description</p>
                             <button onClick={DescriptionVisibility}>
                                 <img src={arrow} alt="arrow" className={`arrow_toggle ${isDescriptionVisible ? 'rotated' : ''}`} />
-
                             </button>
                         </div>
                         {isDescriptionVisible && (
