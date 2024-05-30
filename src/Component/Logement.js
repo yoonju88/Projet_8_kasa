@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../Styles/index.css'
 import { GalleriesList } from '../Data/GalleriesList'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate} from 'react-router-dom'
 import arrowLeft from '../Assets/chevron-left-solid.svg'
 import arrowRight from '../Assets/chevron-right-solid.svg'
 import arrow from '../Assets/chevron-up-solid.svg'
@@ -11,19 +11,25 @@ function Logement() {
     const navigate = useNavigate()
     const { galleryId } = useParams()
     const [bannerImageN, setBannerImageN] = useState(0)
+    const [gallery, setGallery] = useState(null)
+    const [loading, setLoading] = useState(true)
     const [isDescriptionVisible, setIsDescriptionVisible] = useState(false)
     const [isEquipementVisible, setIsEquipementVisible] = useState(false)
-    const gallery = GalleriesList.find(item => item.id === galleryId)
 
     useEffect(() => {
+        const gallery = GalleriesList.find(item => item.id === galleryId)
          if (!gallery) {
             navigate("/404")
+         } else {
+            setGallery(gallery)
+            setLoading(false)
          }
-     }, [gallery, navigate])
+     }, [galleryId, navigate])
 
-     if(!gallery) {
-        return null
-     }    
+     if(loading) {
+        return  <div>Loading...</div>   
+     } 
+
     const bannerImage = gallery.pictures[bannerImageN]
     const increase = () => {
         setBannerImageN(bannerImageN === gallery.pictures.length - 1 ? 0 : bannerImageN + 1)
