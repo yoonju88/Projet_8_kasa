@@ -1,7 +1,6 @@
 import Logo from '../Assets/kasa_logo.png'
 import '../Styles/index.css'
 
-
 function Footer() {
     return (
         <footer>
@@ -13,6 +12,5 @@ function Footer() {
             </div>
         </footer>
     )
-
 }
 export default Footer

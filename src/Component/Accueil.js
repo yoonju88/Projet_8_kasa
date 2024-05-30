@@ -13,9 +13,7 @@ function Accueil(){
                 title={gallery.title}
                 cover={gallery.cover}
             />
-    )) 
-
- 
+    ))  
     const bannerTitle = (
         <React.Fragment>Chez vous,<br className='break'/> partout et ailleurs</React.Fragment>
     )
@@ -30,5 +28,4 @@ function Accueil(){
         </section>
     )
 }
-
 export default Accueil
