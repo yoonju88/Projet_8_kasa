@@ -11,10 +11,4 @@ function Banner ({bannerImage, bannerTitle, alt}) {
         </div>
     )
 }
-
-Banner.prototype = {
-    bannerImage: PropTypes.string.isRequired,
-    bannerTitle: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
-}
 export default Banner
