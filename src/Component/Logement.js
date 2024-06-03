@@ -27,7 +27,7 @@ function Logement() {
      }, [galleryId, navigate])
      if(loading) {
         return  <div className='loading_container'>
-            <p className='loading_text'>Loading...</p>
+            <p className='loading_text'>Chargement...</p>
             </div>   
      } 
     const bannerImage = gallery.pictures[bannerImageN]
