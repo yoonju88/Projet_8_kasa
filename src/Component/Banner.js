@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import '../Styles/index.css'
 
 function Banner ({bannerImage, bannerTitle, alt}) {
