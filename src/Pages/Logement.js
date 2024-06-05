@@ -4,7 +4,7 @@ import { GalleriesList } from '../Data/GalleriesList'
 import { useParams, useNavigate} from 'react-router-dom'
 import { FaStar } from "react-icons/fa"
 import ToggleItem from '../Components/ToggleItem'
-import BannerSlide from '../Components/BannerSlide'
+import Banner from '../Components/Banner'
 
 function Logement() {
     const navigate = useNavigate()
@@ -43,7 +43,7 @@ function Logement() {
     }
     return (
         <main className='logement'>
-            <BannerSlide bannerImage={bannerImage} alt = {gallery.title}/>
+            <Banner page='logement' bannerTitle='' bannerImage={bannerImage} alt = {gallery.title}/>
             <section className='logement_content'>
                 <div className='logement_titleContainer'>
                     <div className='titleContainer'>
