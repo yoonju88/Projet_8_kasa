@@ -12,7 +12,7 @@ function BannerSlide ({bannerImage, alt}) {
         setBannerImageN(bannerImageN === 0 ? bannerImage.length - 1 : bannerImageN - 1)
     }
     return(
-        <div className="logement_banner">
+        <section className="logement_banner">
                 <img src={bannerImage[bannerImageN]} alt={`${alt} ${bannerImageN+1}`} className='logement_bannerImage' />
             { bannerImage.length > 1 && (
                 <>
@@ -21,7 +21,7 @@ function BannerSlide ({bannerImage, alt}) {
                     <p className="image_number" >{bannerImageN+1}/{bannerImage.length}</p>
                 </>
             )}    
-        </div>
+        </section>
     )
 }
 

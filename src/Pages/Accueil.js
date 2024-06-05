@@ -20,12 +20,12 @@ function Accueil(){
     const bannerAlt = 'Home banner image'
 
     return (
-        <section className='accueil'>
+        <main className='accueil'>
             <Banner bannerImage={homeBannerImage} bannerTitle={bannerTitle} alt={bannerAlt}/>
-            <div className='gallery'>
+            <section className='gallery'>
                 {galleriesList}
-            </div>
-        </section>
+            </section>
+        </main>
     )
 }
 export default Accueil
