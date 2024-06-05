@@ -203,6 +203,14 @@ header a:hover {
   height:415px;
   position: absolute;
 }
+.image_number{
+  position:absolute;
+  color:white;
+  font-size: 18px;
+  left: 50%;
+  bottom: 20px;
+
+}
 .arrow {
   height:80px;
   position: absolute;
@@ -276,11 +284,11 @@ justify-content: flex-end;
   font-size: 24px;
   margin-left:10px;
 }
-.description, .equipement  {
+.description  {
   width:47%;
   position:relative;
 }
-.equipement li{
+.description li{
 margin-bottom:5px;
 }
 
