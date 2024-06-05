@@ -289,7 +289,10 @@ justify-content: flex-end;
   position:relative;
 }
 .description li{
-margin-bottom:5px;
+  margin-bottom:5px;
+}
+.description ul {
+  padding-left:0;
 }
 
 /*Loading*/

@@ -39,21 +39,21 @@ function Logement() {
                 />
             )
         }
-        return <div className='stars_container'>{stars}</div>
+        return <span className='stars_container'>{stars}</span>
     }
     return (
-        <section className='logement'>
+        <main className='logement'>
             <BannerSlide bannerImage={bannerImage} alt = {gallery.title}/>
-            <div className='logement_content'>
+            <section className='logement_content'>
                 <div className='logement_titleContainer'>
                     <div className='titleContainer'>
                         <h2>{gallery.title}</h2>
                         <p>{gallery.location}</p>
                         <div className='tags'>
                             {gallery.tags.map((tag) => (
-                                <div key={tag} className='tags_box'>
+                                <span key={tag} className='tags_box'>
                                     {tag}
-                                </div>
+                                </span>
                             ))}
                         </div>
                     </div>
@@ -68,12 +68,19 @@ function Logement() {
                     </div>
                 </div>
                 <div className='logement_toggles'>
-                    <ToggleItem  page="logement" title= "Description" description={gallery.description}/>
-                    <ToggleItem  page="logement" title= "Equipments" description={gallery.equipments.map((equipement) => (
-                                    <li key={equipement}>{equipement}</li> ))}/>
+                    <ToggleItem  page="logement" title= "Description">
+                        <p>{gallery.description}</p>
+                    </ToggleItem> 
+                    <ToggleItem  page="logement" title= "Equipments" >
+                        <ul>
+                        {gallery.equipments.map((equipement) => (
+                                    <li key={equipement}>{equipement}</li>
+                        ))}
+                        </ul>
+                    </ToggleItem>                                
                 </div>
-            </div>
-        </section >
+            </section>
+        </main >
     )
 }
 export default Logement

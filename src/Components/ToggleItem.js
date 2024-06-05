@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import arrow from '../Assets/chevron-up-solid.svg'
 
-function ToggleItem({ page, title, description }) {
+function ToggleItem({ page, title, children }) {
 
     const [isVisible, setIsVisible] = useState(false)
     const toggleVisibility = () => {
         setIsVisible(!isVisible)
     }
+
     const changeClassName = `${page === 'apropos' ? 'apropos-item' : 'description'}`
     const titleSize =`${page === 'apropos' ? 'apropos_title' : 'description-title'}`
     return (
@@ -20,7 +21,7 @@ function ToggleItem({ page, title, description }) {
             </div>
             {isVisible && (
                 <div className={`description_box ${isVisible ? 'visible' : 'hidden'}`}>
-                    <p>{description}</p>
+                    <>{children}</>
                 </div>
             )}
         </div>

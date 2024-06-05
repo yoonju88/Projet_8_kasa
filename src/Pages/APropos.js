@@ -13,7 +13,7 @@ function APropos(){
             <section className='apropos_list'>
                 {contentList.map(content =>(
                     <ToggleItem key={content.id}
-                    page="apropos"
+                    page="apropos" 
                     title={content.title}>
                         <p>{content.content}</p>
                     </ToggleItem>
