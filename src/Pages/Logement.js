@@ -20,11 +20,13 @@ function Logement() {
             setGallery(gallery)
             setLoading(false)
          }
-     }, [galleryId, navigate])
+         console.log('useEffet excute')
+     },[])
+     
      if(loading) {
         return  <div className='loading_container'>
-            <p className='loading_text'>Chargement...</p>
-            </div>   
+                    <p className='loading_text'>Chargement...</p>
+                </div>   
      } 
     const bannerImage = gallery.pictures
     const host = gallery.host
