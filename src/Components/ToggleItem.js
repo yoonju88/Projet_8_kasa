@@ -11,7 +11,7 @@ function ToggleItem({ page, title, children }) {
     const changeClassName = `${page === 'apropos' ? 'apropos-item' : 'description'}`
     const titleSize =`${page === 'apropos' ? 'apropos_title' : 'description-title'}`
     return (
-        <div className={changeClassName}>
+        <article className={changeClassName}>
             <div className='title_box'>
 
                 <h3 className={titleSize}>{title}</h3>
@@ -24,7 +24,7 @@ function ToggleItem({ page, title, children }) {
                     <>{children}</>
                 </div>
             )}
-        </div>
+        </article>
     )
 }
 export default ToggleItem

@@ -8,14 +8,14 @@ function GalleryItem({galleryId, title, cover}) {
 
 
     return(
-        <div className="gallery-item" > 
+        <article className="gallery-item" > 
             <Link to={`/Logement/${galleryId}`}>
                 <img src={cover} alt={title} className="gallery_item_image" />
-                <div className="gallery_image-overlay"></div>
+                <span className="gallery_image-overlay"></span>
                 <h3 className="gallery_item_title">{title}</h3>
             </Link>
 
-        </div>
+        </article>
     )
 }
 
