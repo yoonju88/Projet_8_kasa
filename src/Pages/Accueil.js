@@ -21,7 +21,7 @@ function Accueil(){
 
     return (
         <main className='accueil'>
-            <Banner bannerImage={homeBannerImage} bannerTitle={bannerTitle} alt={bannerAlt}/>
+            <Banner page='accueil' bannerImage={homeBannerImage} bannerTitle={bannerTitle} alt={bannerAlt}/>
             <section className='gallery'>
                 {galleriesList}
             </section>
