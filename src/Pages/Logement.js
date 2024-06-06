@@ -20,8 +20,8 @@ function Logement() {
             setGallery(gallery)
             setLoading(false)
          }
-         console.log('useEffet excute')
-     },[])
+         //console.log('useEffet excute')
+     },[galleryId, navigate])
      
      if(loading) {
         return  <div className='loading_container'>
