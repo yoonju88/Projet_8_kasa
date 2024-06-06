@@ -1,6 +1,6 @@
 import logoKasa from '../Assets/kasa_logo.png'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink} from 'react-router-dom'
 import '../Styles/index.css'
 
 function Header() {
@@ -14,15 +14,14 @@ function Header() {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/">Accueil</Link>
+                            <NavLink to="/" activeClassName='active'>Accueil</NavLink>
                         </li>
                         <li>
-                            <Link to="/A_Propos">A propos</Link>
+                            <NavLink to="/A_Propos" activeClassName='active'>A propos</NavLink>
                         </li>
                     </ul>
                 </nav>
             </header>
     )
 }
-
 export default Header

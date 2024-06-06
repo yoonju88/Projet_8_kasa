@@ -62,9 +62,8 @@ header a {
   font-size: 24px;
   text-decoration: none;
 }
-header a:hover {
+.active {
   text-decoration: underline;
-  color:black;
 }
 
 /*Banner*/
