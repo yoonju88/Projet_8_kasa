@@ -2,12 +2,12 @@ import React from 'react'
 import '../Styles/index.css'
 import {GalleriesList} from "../Data/GalleriesList";
 import homeBannerImage from '../Assets/home_banner.jpg'
-import ToggleItem from '../Components/GalleryItem'
 import Banner from '../Components/Banner'
+import GalleryItem from '../Components/GalleryItem';
 
 function Accueil(){
     const galleriesList = GalleriesList.map(gallery => (
-            <ToggleItem
+            <GalleryItem
                 key={gallery.id}
                 galleryId={gallery.id}
                 title={gallery.title}
